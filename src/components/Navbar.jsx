@@ -59,13 +59,13 @@ export default function Navbar() {
             : 'h-[80px] lg:h-[100px] bg-warm-ivory/80 lg:bg-transparent text-charcoal'
         }`}
       >
-        <div className="site-container mx-auto grid grid-cols-2 xl:grid-cols-3 items-center w-full gap-4">
+        <div className="site-container mx-auto flex justify-between items-center w-full gap-4 xl:gap-8">
           
           {/* Logo (Left) */}
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, '#home')}
-            className="flex flex-col z-50 group justify-self-start"
+            className="flex flex-col z-50 group shrink-0"
           >
             <span className="font-serif text-xl sm:text-2xl leading-none tracking-wide group-hover:text-antique-gold transition-colors duration-300">
               ASVIVK
@@ -76,7 +76,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Nav (Center) xl (1280px+) */}
-          <ul className="hidden xl:flex items-center justify-center space-x-5 justify-self-center w-full">
+          <ul className="hidden xl:flex items-center justify-center gap-3 lg:gap-4 xl:gap-6 min-w-0 flex-1 px-4 overflow-hidden">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a 
@@ -92,7 +92,7 @@ export default function Navbar() {
           </ul>
 
           {/* Desktop CTA (Right) */}
-          <div className="hidden xl:flex justify-self-end">
+          <div className="hidden xl:flex shrink-0">
             <a 
               href="tel:8617289516" 
               className={`text-[11px] font-bold tracking-[0.15em] uppercase border px-6 py-3 transition-all duration-500 whitespace-nowrap min-h-[44px] flex items-center justify-center ${
@@ -106,7 +106,7 @@ export default function Navbar() {
           </div>
 
           {/* Mobile & Tablet Toggle */}
-          <div className="xl:hidden flex items-center gap-2 sm:gap-4 z-50 justify-self-end">
+          <div className="xl:hidden flex items-center gap-2 sm:gap-4 z-50 shrink-0">
             <a href="tel:8617289516" className="w-[44px] h-[44px] flex items-center justify-center border border-charcoal/20 hover:bg-charcoal hover:text-warm-ivory transition-colors rounded-full" aria-label="Call Us">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
             </a>

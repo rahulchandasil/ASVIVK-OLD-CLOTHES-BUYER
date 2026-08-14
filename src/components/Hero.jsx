@@ -77,7 +77,7 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="relative w-full min-h-[90vh] pt-[120px] lg:pt-[140px] pb-16 lg:pb-8 flex flex-col justify-center bg-warm-ivory overflow-hidden z-10"
+      className="relative w-full h-auto min-h-[auto] lg:min-h-[calc(100svh-80px)] pt-[100px] lg:pt-[120px] pb-16 flex flex-col justify-center bg-warm-ivory overflow-hidden z-10"
     >
       <style>
         {`
@@ -96,132 +96,123 @@ export default function Hero() {
       <div className="site-container relative z-10 w-full h-full flex flex-col">
         
         {/* Main Grid Content */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-start lg:items-center flex-1">
+        <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.75fr)] gap-8 lg:gap-12 xl:gap-16 items-center flex-1">
           
-          {/* LEFT ZONE: Brand Identity (Desktop) */}
-          <motion.div 
-            className="hidden lg:flex lg:col-span-2 flex-col items-start"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="font-serif text-xl text-charcoal tracking-wide mb-2">ASVIVK</span>
-            <span className="w-12 h-[1px] bg-antique-gold mb-2"></span>
-            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-charcoal/70">
-              OLD CLOTHES BUYER
-            </span>
-          </motion.div>
-
-          {/* Mobile Brand Identity */}
-          <motion.div 
-            className="lg:hidden flex flex-col items-start mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="font-serif text-xl text-charcoal tracking-wide mb-2">ASVIVK</span>
-            <span className="w-12 h-[1px] bg-antique-gold mb-2"></span>
-            <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-charcoal/70">
-              OLD CLOTHES BUYER
-            </span>
-          </motion.div>
-
-          {/* CENTER ZONE: Typography & CTAs */}
-          <motion.div 
-            className="lg:col-span-5 xl:col-span-6 flex flex-col w-full z-20"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            <motion.h1 
-              variants={itemVariants}
-              className="text-[clamp(3.5rem,10vw,7.5rem)] font-serif leading-[1.05] tracking-tight text-charcoal mb-6 break-words"
-            >
-              <span className="block">OLD THINGS.</span>
-              <span className="block italic font-light text-antique-gold">NEW VALUE.</span>
-            </motion.h1>
+          {/* LEFT ZONE: Content */}
+          <div className="flex flex-col w-full z-20">
             
-            <motion.p 
-              variants={itemVariants} 
-              className="text-charcoal/70 font-sans font-light text-base sm:text-lg lg:text-xl max-w-[480px] leading-relaxed mb-10"
+            {/* Brand Identity */}
+            <motion.div 
+              className="flex flex-col items-start mb-6 lg:mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
             >
-              We buy old clothes, coins, antiques and other old items with a simple, direct and fair evaluation process.
-            </motion.p>
-            
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <a 
-                href="#contact" 
-                className="group inline-flex items-center justify-center px-8 lg:px-10 py-4 bg-charcoal text-warm-ivory text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-antique-gold w-full sm:w-auto min-h-[48px]"
-                aria-label="Sell your old items"
-              >
-                SELL YOUR OLD ITEMS
-                <ArrowRight size={16} className="ml-3 group-hover:translate-x-1 transition-transform duration-300" />
-              </a>
-              
-              <a 
-                href="tel:8617289516" 
-                className="group inline-flex items-center justify-center px-8 lg:px-10 py-4 bg-transparent border border-charcoal/30 text-charcoal text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:border-charcoal hover:bg-charcoal/5 w-full sm:w-auto min-h-[48px]"
-                aria-label="Call ASVIVK"
-              >
-                <Phone size={14} className="mr-3" />
-                CALL ASVIVK
-              </a>
+              <span className="font-serif text-xl text-charcoal tracking-wide mb-2">ASVIVK</span>
+              <span className="w-12 h-[1px] bg-antique-gold mb-2"></span>
+              <span className="text-[10px] font-semibold tracking-[0.2em] uppercase text-charcoal/70">
+                OLD CLOTHES BUYER
+              </span>
             </motion.div>
-          </motion.div>
+
+            <motion.div 
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.h1 
+                variants={itemVariants}
+                className="text-[clamp(3rem,7vw,7rem)] font-serif leading-[0.95] tracking-tight text-charcoal mb-6 break-words"
+              >
+                <span className="block">OLD THINGS.</span>
+                <span className="block italic font-light text-antique-gold">NEW VALUE.</span>
+              </motion.h1>
+              
+              <motion.p 
+                variants={itemVariants} 
+                className="text-charcoal/70 font-sans font-light text-base sm:text-lg lg:text-xl max-w-[480px] leading-relaxed mb-10"
+              >
+                We buy old clothes, coins, antiques and other old items with a simple, direct and fair evaluation process.
+              </motion.p>
+              
+              <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+                <a 
+                  href="#contact" 
+                  className="group inline-flex items-center justify-center px-8 lg:px-10 py-4 bg-charcoal text-warm-ivory text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:bg-antique-gold w-full sm:w-auto min-h-[48px]"
+                  aria-label="Sell your old items"
+                >
+                  SELL YOUR OLD ITEMS
+                  <ArrowRight size={16} className="ml-3 group-hover:translate-x-1 transition-transform duration-300" />
+                </a>
+                
+                <a 
+                  href="tel:8617289516" 
+                  className="group inline-flex items-center justify-center px-8 lg:px-10 py-4 bg-transparent border border-charcoal/30 text-charcoal text-xs font-bold tracking-[0.2em] uppercase transition-all duration-300 hover:border-charcoal hover:bg-charcoal/5 w-full sm:w-auto min-h-[48px]"
+                  aria-label="Call ASVIVK"
+                >
+                  <Phone size={14} className="mr-3" />
+                  CALL ASVIVK
+                </a>
+              </motion.div>
+            </motion.div>
+          </div>
           
           {/* RIGHT ZONE: Image Carousel */}
-          <div className="lg:col-span-5 xl:col-span-4 relative mt-12 lg:mt-0 w-full flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[400px] lg:max-w-none ml-auto mr-auto lg:mr-0 lg:ml-12">
+          <div className="relative mt-8 lg:mt-0 w-full flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[420px] lg:max-w-[500px] mx-auto lg:ml-auto lg:mr-0">
               
               {/* Offset Frame */}
               <div className="absolute inset-0 border border-charcoal/10 translate-x-4 translate-y-4 sm:translate-x-6 sm:translate-y-6 pointer-events-none z-0"></div>
               
-              {/* Image Container */}
-              <motion.div 
-                className="relative w-full aspect-[4/5] lg:aspect-[3/4] overflow-hidden bg-muted/10 z-10"
-                initial={{ clipPath: 'inset(0 0 100% 0)' }}
-                animate={{ clipPath: 'inset(0 0 0% 0)' }}
-                transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                onMouseEnter={() => setIsPaused(true)}
-                onMouseLeave={() => setIsPaused(false)}
-              >
-                <AnimatePresence initial={false}>
-                  <motion.div
-                    key={currentIndex}
-                    className="absolute inset-0 w-full h-full"
-                    initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 1.04 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: prefersReducedMotion ? 1 : 1.02 }}
-                    transition={{
-                      opacity: { duration: 1.2, ease: "easeInOut" },
-                      scale: { duration: 6, ease: "easeOut" }
-                    }}
-                  >
-                    <img 
-                      src={heroImages[currentIndex].src}
-                      alt={heroImages[currentIndex].alt}
-                      className="w-full h-full object-cover"
-                      style={{ objectPosition: heroImages[currentIndex].position }}
-                      fetchPriority={currentIndex === 0 ? "high" : "auto"}
-                    />
-                  </motion.div>
-                </AnimatePresence>
-              </motion.div>
+              {/* Image Container Wrapper */}
+              <div className="relative z-10">
+                {/* Image Container */}
+                <motion.div 
+                  className="relative w-full aspect-[4/5] lg:aspect-[3/4] overflow-hidden bg-muted/10 z-10"
+                  initial={{ clipPath: 'inset(0 0 100% 0)' }}
+                  animate={{ clipPath: 'inset(0 0 0% 0)' }}
+                  transition={{ duration: 1.2, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
+                >
+                  <AnimatePresence initial={false}>
+                    <motion.div
+                      key={currentIndex}
+                      className="absolute inset-0 w-full h-full"
+                      initial={{ opacity: 0, scale: prefersReducedMotion ? 1 : 1.04 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: prefersReducedMotion ? 1 : 1.02 }}
+                      transition={{
+                        opacity: { duration: 1.2, ease: "easeInOut" },
+                        scale: { duration: 6, ease: "easeOut" }
+                      }}
+                    >
+                      <img 
+                        src={heroImages[currentIndex].src}
+                        alt={heroImages[currentIndex].alt}
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: heroImages[currentIndex].position }}
+                        fetchPriority={currentIndex === 0 ? "high" : "auto"}
+                      />
+                    </motion.div>
+                  </AnimatePresence>
+                </motion.div>
 
-              {/* Image Overlay Label (Outside overflow-hidden to prevent clipping) */}
-              <motion.div 
-                className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 lg:bottom-12 lg:-left-12 z-20 bg-warm-ivory px-4 py-3 sm:px-6 sm:py-4 shadow-xl border border-charcoal/5 flex flex-col whitespace-nowrap"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
-              >
-                <span className="font-serif text-sm sm:text-base text-charcoal leading-none tracking-widest uppercase mb-1">
-                  BANSDRONI
-                </span>
-                <span className="font-serif italic text-xs sm:text-sm text-antique-gold leading-none tracking-widest uppercase">
-                  · KOLKATA
-                </span>
-              </motion.div>
+                {/* Image Overlay Label (Outside overflow-hidden to prevent clipping) */}
+                <motion.div 
+                  className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 lg:bottom-12 lg:-left-12 z-20 bg-warm-ivory px-4 py-3 sm:px-6 sm:py-4 shadow-xl border border-charcoal/5 flex flex-col whitespace-nowrap"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <span className="font-serif text-sm sm:text-base text-charcoal leading-none tracking-widest uppercase mb-1">
+                    BANSDRONI
+                  </span>
+                  <span className="font-serif italic text-xs sm:text-sm text-antique-gold leading-none tracking-widest uppercase">
+                    · KOLKATA
+                  </span>
+                </motion.div>
+              </div>
 
               {/* Carousel Controls & Progress */}
               <div className="flex items-center justify-between mt-8 w-full z-10 relative">
