@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-ivory: #f7f3ec;
+  --color-charcoal: #171715;
+  --color-antique-gold: #b8954a;
+  --color-warm-brown: #5b4636;
+  --color-border: #e5e7eb;
+  --color-muted: #81796f;
+
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-warm-ivory);
+    color: var(--color-charcoal);
+    /* Optimize for mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans antialiased;
+    font-size: clamp(14px, 1.2vw, 18px);
+    overflow-x: hidden;
+    /* Better touch support */
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+  
+  ::selection {
+    background-color: rgba(184, 149, 74, 0.3);
+    color: #171715;
+  }
+
+  section[id] {
+    scroll-margin-top: 76px;
+  }
+  
+  @media (min-width: 640px) {
+    section[id] {
+      scroll-margin-top: 84px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    section[id] {
+      scroll-margin-top: 100px;
+    }
+  }
+
+  /* Improve form inputs on mobile */
+  input, textarea, select, button {
+    font-size: 16px;
+  }
+
+  /* Better link accessibility */
+  a {
+    @apply outline-offset-2;
+  }
+
+  a:focus-visible {
+    @apply outline-2 outline-antique-gold;
+  }
+
+  /* Improve image responsiveness */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Better display for mobile */
+  @media (max-width: 640px) {
+    body {
+      font-size: 14px;
+    }
+
+    /* Larger touch targets */
+    button, a, input, textarea, select {
+      min-height: 44px;
+    }
+  }
+
+  /* Optimize for tablets */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    body {
+      font-size: 16px;
+    }
+  }
+}
+
+@layer components {
+  /* Fluid Typography */
+  .text-fluid-hero {
+    font-size: clamp(2rem, 6vw, 8rem);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-fluid-section {
+    font-size: clamp(1.75rem, 5vw, 6rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+
+  .text-fluid-h3 {
+    font-size: clamp(1.25rem, 3vw, 3.5rem);
+    line-height: 1.1;
+  }
+
+  /* Responsive Spacing */
+  .section-padding {
+    @apply py-12 sm:py-16 md:py-24 lg:py-32 xl:py-48;
+  }
+  
+  .section-padding-lg {
+    @apply py-16 sm:py-20 md:py-28 lg:py-40 xl:py-56;
+  }
+
+  .section-padding-sm {
+    @apply py-8 sm:py-12 md:py-16 lg:py-24;
+  }
+  
+  /* Container */
+  .site-container {
+    @apply mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 2xl:px-20 w-full max-w-[1800px];
+  }
+
+  /* Responsive Gap Utilities */
+  .gap-responsive {
+    @apply gap-4 sm:gap-6 md:gap-8 lg:gap-12 xl:gap-16;
+  }
+
+  /* Eyebrows */
+  .eyebrow {
+    @apply text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-charcoal mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex items-center gap-3 sm:gap-4;
+  }
+  
+  .eyebrow-light {
+    @apply text-[10px] sm:text-xs md:text-sm font-semibold tracking-[0.2em] sm:tracking-[0.25em] uppercase text-warm-ivory mb-4 sm:mb-6 md:mb-8 lg:mb-10 flex items-center gap-3 sm:gap-4;
+  }
+
+  /* Buttons - Mobile Optimized */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-charcoal text-warm-ivory text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-500 hover:bg-antique-gold active:scale-95 touch-manipulation;
+    min-height: 48px;
+  }
+  
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-transparent border border-charcoal/20 text-charcoal text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-500 hover:border-charcoal hover:bg-charcoal hover:text-warm-ivory active:scale-95 touch-manipulation;
+    min-height: 48px;
+  }
+  
+  .btn-light {
+    @apply inline-flex items-center justify-center px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-transparent border border-warm-ivory/20 text-warm-ivory text-[11px] sm:text-xs md:text-sm font-bold tracking-[0.15em] sm:tracking-[0.2em] uppercase transition-all duration-500 hover:border-warm-ivory hover:bg-warm-ivory hover:text-charcoal active:scale-95 touch-manipulation;
+    min-height: 48px;
+  }
+
+  /* Responsive Grid Layouts */
+  .grid-responsive-2 {
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12;
+  }
+
+  .grid-responsive-3 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8;
+  }
+
+  .grid-responsive-4 {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 md:gap-8;
+  }
+
+  /* Card Styling - Responsive */
+  .card-responsive {
+    @apply p-4 sm:p-6 md:p-8 lg:p-12 rounded-lg sm:rounded-xl md:rounded-2xl transition-all duration-300;
+  }
+
+  /* Image Responsiveness */
+  .img-responsive {
+    @apply w-full h-auto object-cover rounded-lg sm:rounded-xl md:rounded-2xl;
+  }
+
+  /* Heading Sizes - Responsive */
+  .h1-responsive {
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-serif leading-tight;
+  }
+
+  .h2-responsive {
+    @apply text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-serif leading-snug;
+  }
+
+  .h3-responsive {
+    @apply text-lg sm:text-xl md:text-2xl lg:text-3xl font-serif;
+  }
+
+  /* Body Text Responsive */
+  .body-responsive {
+    @apply text-sm sm:text-base md:text-lg leading-relaxed;
+  }
+
+  .body-small {
+    @apply text-xs sm:text-sm md:text-base leading-relaxed;
+  }
+
+  /* Flex Direction Responsive */
+  .flex-responsive {
+    @apply flex flex-col sm:flex-row items-center;
+  }
+
+  /* Touch-friendly Spacing */
+  .touch-safe-spacing {
+    @apply p-4 sm:p-6 md:p-8;
+  }
+
+  /* Mobile Menu Optimization */
+  @media (max-width: 1279px) {
+    .nav-link {
+      @apply py-3 px-4 transition-colors;
+    }
+
+    .mobile-safe-click {
+      min-height: 48px;
+      min-width: 48px;
+    }
+  }
+
+  /* Tablet Optimization (768px - 1023px) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .tablet-container {
+      @apply px-8 py-20;
+    }
+
+    .tablet-grid {
+      @apply grid grid-cols-2 gap-8;
+    }
+  }
+
+  /* Landscape Mobile */
+  @media (max-height: 500px) and (max-width: 1024px) {
+    .section-padding {
+      @apply py-8 sm:py-10;
+    }
+
+    .spacing-reduce-mobile-landscape {
+      @apply gap-2 sm:gap-3;
+    }
+  }
+}
