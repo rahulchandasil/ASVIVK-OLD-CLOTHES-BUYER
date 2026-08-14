@@ -8,7 +8,6 @@ const navLinks = [
   { name: 'What We Buy', href: '#what-we-buy' },
   { name: 'What We Sell', href: '#what-we-sell' },
   { name: 'How It Works', href: '#how-it-works' },
-  { name: 'Testimonials', href: '#testimonials' },
   { name: 'Gallery', href: '#gallery' },
   { name: 'Contact', href: '#contact' },
   { name: 'Location', href: '#location' }

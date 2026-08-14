@@ -34,7 +34,7 @@ export default function Hero() {
 
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
+    }, 2000);
 
     return () => {
       clearInterval(timer);
@@ -229,7 +229,7 @@ export default function Hero() {
                       key={currentIndex}
                       className="h-full bg-antique-gold origin-left w-full"
                       style={{ 
-                        animation: prefersReducedMotion ? 'none' : `progress-fill 5s linear forwards`,
+                        animation: prefersReducedMotion ? 'none' : `progress-fill 2s linear forwards`,
                         animationPlayState: isPaused ? 'paused' : 'running'
                       }}
                     />

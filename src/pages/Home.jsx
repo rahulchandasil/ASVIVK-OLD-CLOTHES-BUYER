@@ -6,7 +6,6 @@ import WhatWeBuy from '../components/WhatWeBuy';
 import WhatWeSell from '../components/WhatWeSell';
 import HowItWorks from '../components/HowItWorks';
 import Trust from '../components/Trust';
-import Testimonials from '../components/Testimonials';
 import Gallery from '../components/Gallery';
 import Contact from '../components/Contact';
 import Location from '../components/Location';
@@ -23,7 +22,6 @@ export default function Home() {
         <WhatWeSell />
         <HowItWorks />
         <Trust />
-        <Testimonials />
         <Gallery />
         <Contact />
         <Location />
