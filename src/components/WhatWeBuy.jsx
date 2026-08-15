@@ -4,16 +4,20 @@ import pic13 from '../assets/images/pic13.jpeg';
 import pic26 from '../assets/images/pic26.jpeg';
 import pic17 from '../assets/images/pic17.jpeg';
 import pic11 from '../assets/images/pic11.png';
+import pic10 from '../assets/images/pic10.png';
 import pic7 from '../assets/images/pic7.png';
 import pic5 from '../assets/images/pic5.png';
+import pic4 from '../assets/images/pic4.jpeg';
+import pic22 from '../assets/images/pic22.jpeg';
+import pic16 from '../assets/images/pic16.jpeg';
 
 const categories = [
   { num: "01", title: "OLD CLOTHES", desc: "Vintage garments and textiles.", image: pic13, placeholder: "" },
   { num: "02", title: "OLD COINS", desc: "Old coins and currency with historical and collectible value.", image: null, placeholder: "COINS & CURRENCY" },
-  { num: "03", title: "ANTIQUE ITEMS", desc: "Genuine antique objects and historical artifacts.", image: null, placeholder: "ANTIQUE OBJECTS" },
-  { num: "04", title: "VINTAGE PRODUCTS", desc: "Classic electronics, old watches and accessories.", image: null, placeholder: "VINTAGE PRODUCTS" },
-  { num: "05", title: "OLD HOUSEHOLD ITEMS", desc: "Well-preserved furniture, clocks and decor.", image: null, placeholder: "HOUSEHOLD DECOR" },
-  { num: "06", title: "OTHER VALUABLE OLD ITEMS", desc: "Unique collectibles and rare vintage belongings.", image: null, placeholder: "VALUABLE ITEMS" }
+  { num: "03", title: "ANTIQUE ITEMS", desc: "Genuine antique objects and historical artifacts.", image: pic10 , placeholder: "ANTIQUE OBJECTS" },
+  { num: "04", title: "VINTAGE PRODUCTS", desc: "Classic electronics, old watches and accessories.", image: pic4, placeholder: "VINTAGE PRODUCTS" },
+  { num: "05", title: "OLD HOUSEHOLD ITEMS", desc: "Well-preserved furniture, clocks and decor.", image: pic16, placeholder: "HOUSEHOLD DECOR" },
+  { num: "06", title: "OTHER VALUABLE OLD ITEMS", desc: "Unique collectibles and rare vintage belongings.", image: pic22 , placeholder: "VALUABLE ITEMS" }
 ];
 
 export default function WhatWeBuy() {

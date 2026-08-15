@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import pic2 from '../assets/images/pic2.png';
-import pic4 from '../assets/images/pic4.png';
+import pic4 from '../assets/images/pic4.jpeg';
 import pic14 from '../assets/images/pic14.jpeg';
 import pic5 from '../assets/images/pic5.png';
 import pic17 from '../assets/images/pic17.jpeg';
