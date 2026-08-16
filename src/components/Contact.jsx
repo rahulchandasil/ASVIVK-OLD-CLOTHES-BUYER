@@ -27,17 +27,31 @@ export default function Contact() {
             Have old clothes, coins, antiques or other old items? Get in touch with ASVIVK.
           </p>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 lg:gap-8 w-full max-w-2xl mx-auto">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4 sm:gap-6 lg:gap-8 w-full max-w-4xl mx-auto">
             <a 
               href="tel:8617289516" 
-              className="inline-flex items-center justify-center px-8 lg:px-12 py-5 lg:py-6 bg-antique-gold text-charcoal text-[13px] font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:bg-warm-ivory w-full sm:w-1/2 min-h-[56px] text-center"
+              className="inline-flex items-center justify-center px-8 lg:px-12 py-5 lg:py-6 bg-antique-gold text-charcoal text-[13px] font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:bg-warm-ivory w-full sm:w-auto min-h-[56px] text-center"
             >
-              CALL ASVIVK
+              CALL - 8617289516
+            </a>
+            
+            <a 
+              href="tel:7003356490" 
+              className="inline-flex items-center justify-center px-8 lg:px-12 py-5 lg:py-6 bg-antique-gold text-charcoal text-[13px] font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:bg-warm-ivory w-full sm:w-auto min-h-[56px] text-center"
+            >
+              CALL - 7003356490
+            </a>
+            
+            <a 
+              href="tel:9330263780" 
+              className="inline-flex items-center justify-center px-8 lg:px-12 py-5 lg:py-6 bg-antique-gold text-charcoal text-[13px] font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:bg-warm-ivory w-full sm:w-auto min-h-[56px] text-center"
+            >
+              CALL - 9330263780
             </a>
             
             <a 
               href="mailto:bijoykhaoria61@gmail.com" 
-              className="inline-flex items-center justify-center px-8 lg:px-12 py-5 lg:py-6 bg-transparent border border-warm-ivory/20 text-warm-ivory text-[13px] font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:border-warm-ivory hover:bg-white/5 w-full sm:w-1/2 min-h-[56px] text-center"
+              className="inline-flex items-center justify-center px-8 lg:px-12 py-5 lg:py-6 bg-transparent border border-warm-ivory/20 text-warm-ivory text-[13px] font-bold tracking-[0.2em] uppercase transition-all duration-500 hover:border-warm-ivory hover:bg-white/5 w-full sm:w-auto min-h-[56px] text-center"
             >
               SEND EMAIL
             </a>
