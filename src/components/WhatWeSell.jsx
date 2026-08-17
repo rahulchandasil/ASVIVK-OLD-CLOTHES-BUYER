@@ -98,10 +98,10 @@ export default function WhatWeSell() {
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
             <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-              <img src={pic10} alt="Old Coins & Antiques" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+              <img src={pic10} alt="Antiques" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
               <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20"></div>
               <div className="absolute bottom-6 left-6 z-20">
-                <h3 className="font-serif text-xl sm:text-2xl text-warm-ivory drop-shadow-lg break-words">Old Coins & Antiques</h3>
+                <h3 className="font-serif text-xl sm:text-2xl text-warm-ivory drop-shadow-lg break-words"> Antiques</h3>
               </div>
             </div>
           </motion.div>
