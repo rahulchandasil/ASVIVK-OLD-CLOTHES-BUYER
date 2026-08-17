@@ -73,7 +73,16 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center sm:items-start pt-8 border-t border-white/10 text-warm-ivory/30 text-[10px] uppercase tracking-widest font-semibold text-center sm:text-left gap-4">
-          <p>&copy; {currentYear} ASVIVK Old Clothes Buyer. All rights reserved.</p>
+          <p>&copy; {currentYear} ASVIVK Old Clothes Buyer. Developed by
+            <a
+              href="https://www.teamdeoskolkata.in/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-bold hover:text-red-700 transition-colors duration-300 ml-1"
+            >
+              Digital Exposure Online Service
+            </a>.
+          </p>
           <p>Premium Design</p>
         </div>
 

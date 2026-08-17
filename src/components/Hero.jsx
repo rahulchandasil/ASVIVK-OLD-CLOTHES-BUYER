@@ -122,7 +122,7 @@ export default function Hero() {
             >
               <motion.h1 
                 variants={itemVariants}
-                className="text-[clamp(3rem,7vw,7rem)] font-serif leading-[0.95] tracking-tight text-charcoal mb-6 break-words"
+                className="text-[clamp(2.5rem,8vw,7rem)] font-serif leading-[0.95] tracking-tight text-charcoal mb-6 break-words"
               >
                 <span className="block">OLD THINGS.</span>
                 <span className="block italic font-light text-antique-gold">NEW VALUE.</span>
