@@ -47,6 +47,19 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [showAll, setShowAll] = useState(false);
 
+  const handleToggle = () => {
+    if (showAll) {
+      setShowAll(false);
+      const el = document.getElementById('gallery');
+      if (el) {
+        const offsetTop = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      }
+    } else {
+      setShowAll(true);
+    }
+  };
+
   return (
     <section id="gallery" className="py-16 sm:py-24 lg:py-32 bg-warm-ivory border-t border-muted/10 relative z-10">
       <div className="site-container relative z-10">
@@ -155,17 +168,7 @@ export default function Gallery() {
 
         </div>
 
-        {/* Load More Button */}
-        {!showAll && (
-          <div className="mt-16 lg:mt-24 flex justify-center w-full clear-both pt-8 lg:pt-16">
-            <button 
-              onClick={() => setShowAll(true)}
-              className="btn-secondary min-h-[48px] px-10"
-            >
-              LOAD MORE IMAGES
-            </button>
-          </div>
-        )}
+
 
         {/* Extra Images Grid */}
         <AnimatePresence>
@@ -201,6 +204,15 @@ export default function Gallery() {
             </motion.div>
           )}
         </AnimatePresence>
+
+        <div className="mt-12 lg:mt-16 flex justify-center w-full clear-both pt-8 lg:pt-12">
+          <button 
+            onClick={handleToggle}
+            className="btn-secondary min-h-[48px] px-10"
+          >
+            {showAll ? 'SHOW LESS IMAGES' : 'LOAD MORE IMAGES'}
+          </button>
+        </div>
 
       </div>
 

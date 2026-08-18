@@ -19,6 +19,19 @@ export default function WhatWeSell() {
   const [selectedImage, setSelectedImage] = useState(null);
   const [showAll, setShowAll] = useState(false);
 
+  const handleToggle = () => {
+    if (showAll) {
+      setShowAll(false);
+      const el = document.getElementById('what-we-sell');
+      if (el) {
+        const offsetTop = el.getBoundingClientRect().top + window.scrollY - 80;
+        window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      }
+    } else {
+      setShowAll(true);
+    }
+  };
+
   return (
     <section id="what-we-sell" className="py-16 sm:py-24 lg:py-32 bg-warm-brown text-warm-ivory relative z-10 overflow-hidden">
       
@@ -303,16 +316,14 @@ export default function WhatWeSell() {
           )}
         </AnimatePresence>
 
-        {!showAll && (
-          <div className="mt-16 lg:mt-24 flex justify-center">
-            <button 
-              onClick={() => setShowAll(true)}
-              className="btn-light min-h-[48px] px-10"
-            >
-              LOAD MORE
-            </button>
-          </div>
-        )}
+        <div className="mt-12 lg:mt-16 flex justify-center w-full">
+          <button 
+            onClick={handleToggle}
+            className="btn-light min-h-[48px] px-10"
+          >
+            {showAll ? 'SHOW LESS' : 'LOAD MORE'}
+          </button>
+        </div>
       </div>
 
       {/* Lightbox Modal */}
