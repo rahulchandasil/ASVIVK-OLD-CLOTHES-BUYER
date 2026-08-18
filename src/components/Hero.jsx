@@ -1,47 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
 import { ArrowRight, Phone } from 'lucide-react';
-import pic1 from '../assets/images/pic1.png';
-import pic2 from '../assets/images/pic2.png';
-import pic3 from '../assets/images/pic3.png';
-import pic4 from '../assets/images/pic4.jpeg';
-import pic6 from '../assets/images/pic6.png';
-import pic8 from '../assets/images/pic8.png';
-import pic11 from '../assets/images/pic11.png';
+import pic35 from '../assets/images/pic35.jpeg';
+import pic36 from '../assets/images/pic36.jpeg';
+import pic52 from '../assets/images/pic52.jpeg';
+import pic47 from '../assets/images/pic47.jpeg';
+import pic10 from '../assets/images/pic10.png';
 import pic14 from '../assets/images/pic14.jpeg';
-import pic17 from '../assets/images/pic17.jpeg';
-import pic18 from '../assets/images/pic18.jpeg';
+import pic2 from '../assets/images/pic2.png';
 import pic19 from '../assets/images/pic19.jpeg';
-import pic21 from '../assets/images/pic21.jpeg';
-import pic22 from '../assets/images/pic22.jpeg';
-import pic24 from '../assets/images/pic24.jpeg';
-import pic25 from '../assets/images/pic25.jpeg';
-import pic27 from '../assets/images/pic27.jpeg';
-import pic28 from '../assets/images/pic28.jpeg';
-import pic29 from '../assets/images/pic29.jpeg';
-import pic30 from '../assets/images/pic30.jpeg';
+import pic6 from '../assets/images/pic6.png';
 import pic32 from '../assets/images/pic32.jpeg';
 
 const heroImages = [
-  { src: pic1, alt: "Curated vintage items and old clothes at ASVIVK Kolkata", position: "center 30%" },
+  { src: pic35, alt: "Vintage Watch Collection", position: "center" },
+  { src: pic14, alt: "Curated vintage sarees and old clothes at ASVIVK Kolkata", position: "center 30%" },
+  { src: pic52, alt: "Old Coins and Currency", position: "center" },
   { src: pic2, alt: "Old clothes and vintage items", position: "center" },
-  { src: pic3, alt: "Collectible vintage pieces", position: "center" },
-  { src: pic4, alt: "Antique collection", position: "center" },
+  { src: pic36, alt: "Classic Timepieces", position: "center" },
+  { src: pic10, alt: "Antique Items", position: "center" },
+  { src: pic19, alt: "Collectible vintage pieces", position: "center" },
+  { src: pic47, alt: "Rare Old Coins", position: "center" },
   { src: pic6, alt: "Vintage clothing", position: "center" },
-  { src: pic8, alt: "Old treasures", position: "center" },
-  { src: pic11, alt: "Vintage accessories", position: "center" },
-  { src: pic14, alt: "Vintage clothing collection", position: "center" },
-  { src: pic17, alt: "Antique items", position: "center" },
-  { src: pic18, alt: "Collectible pieces", position: "center 70%" },
-  { src: pic19, alt: "Vintage collection", position: "center" },
-  { src: pic21, alt: "Old clothes display", position: "center" },
-  { src: pic22, alt: "Old stacked objects", position: "center" },
-  { src: pic24, alt: "Vintage items", position: "center" },
-  { src: pic25, alt: "Antique pieces", position: "center" },
-  { src: pic27, alt: "Collectible clothes", position: "center" },
-  { src: pic28, alt: "Vintage treasures", position: "center" },
-  { src: pic29, alt: "Old items collection", position: "center" },
-  { src: pic30, alt: "Curated vintage selection", position: "center" },
   { src: pic32, alt: "Premium vintage finds", position: "center" }
 ];
 

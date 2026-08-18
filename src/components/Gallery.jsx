@@ -1,64 +1,104 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X } from 'lucide-react';
 
-// Featured masonry images
-import pic2 from '../assets/images/pic2.png';
-import pic4 from '../assets/images/pic4.jpeg';
-import pic14 from '../assets/images/pic14.jpeg';
-import pic5 from '../assets/images/pic5.png';
-import pic17 from '../assets/images/pic17.jpeg';
-
-// Extra images for Load More
-import pic1 from '../assets/images/pic1.png';
-import pic3 from '../assets/images/pic3.png';
-import pic6 from '../assets/images/pic6.png';
-import pic7 from '../assets/images/pic7.png';
-import pic8 from '../assets/images/pic8.png';
-import pic9 from '../assets/images/pic9.png';
-import pic10 from '../assets/images/pic10.png';
-import pic11 from '../assets/images/pic11.png';
-import pic12 from '../assets/images/pic12.png';
-import pic13 from '../assets/images/pic13.jpeg';
-import pic15 from '../assets/images/pic15.jpeg';
-import pic16 from '../assets/images/pic16.jpeg';
-import pic18 from '../assets/images/pic18.jpeg';
-import pic19 from '../assets/images/pic19.jpeg';
-import pic20 from '../assets/images/pic20.jpeg';
-import pic21 from '../assets/images/pic21.jpeg';
-import pic22 from '../assets/images/pic22.jpeg';
-import pic23 from '../assets/images/pic23.jpeg';
-import pic24 from '../assets/images/pic24.jpeg';
-import pic25 from '../assets/images/pic25.jpeg';
-import pic26 from '../assets/images/pic26.jpeg';
-import pic27 from '../assets/images/pic27.jpeg';
-import pic28 from '../assets/images/pic28.jpeg';
-import pic29 from '../assets/images/pic29.jpeg';
-import pic30 from '../assets/images/pic30.jpeg';
-import pic32 from '../assets/images/pic32.jpeg';
-
-const extraImages = [
-  pic1, pic3, pic6, pic7, pic8, pic9, pic10, pic11, pic12, pic13, pic15, pic16, 
-  pic18, pic19, pic20, pic21, pic22, pic23, pic24, pic25, pic26, pic27, pic28, 
-  pic29, pic30, pic32
-];
-
-export default function Gallery() {
-  const [selectedImage, setSelectedImage] = useState(null);
+function GalleryCategory({ id, title, images, setSelectedImage }) {
   const [showAll, setShowAll] = useState(false);
+  const initialCount = 4;
+  
+  const displayedImages = showAll ? images : images.slice(0, initialCount);
+  const hasMore = images.length > initialCount;
 
   const handleToggle = () => {
     if (showAll) {
       setShowAll(false);
-      const el = document.getElementById('gallery');
+      const el = document.getElementById(`category-${id}`);
       if (el) {
-        const offsetTop = el.getBoundingClientRect().top + window.scrollY - 80;
+        // scroll back up smoothly
+        const offsetTop = el.getBoundingClientRect().top + window.scrollY - 100;
         window.scrollTo({ top: offsetTop, behavior: 'smooth' });
       }
     } else {
       setShowAll(true);
     }
   };
+
+  if (!images || images.length === 0) return null;
+
+  return (
+    <div id={`category-${id}`} className="mb-16 lg:mb-24 scroll-mt-24">
+      <div className="flex items-center justify-between mb-8 border-b border-charcoal/10 pb-4">
+        <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl text-charcoal">{title}</h3>
+        <span className="text-sm font-medium text-charcoal/50 uppercase tracking-widest">{images.length} Items</span>
+      </div>
+      
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <AnimatePresence initial={false}>
+          {displayedImages.map((img, index) => (
+            <motion.div 
+              key={`${id}-${index}`}
+              layout
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full aspect-square overflow-hidden border border-muted/10 bg-white cursor-pointer group"
+              onClick={() => setSelectedImage(img)}
+            >
+              <img 
+                src={img} 
+                alt={`${title} item ${index + 1}`} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                loading="lazy" 
+              />
+              <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-300"></div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
+
+      {hasMore && (
+        <div className="mt-8 flex justify-center w-full">
+          <button 
+            onClick={handleToggle}
+            className="btn-secondary min-h-[48px] px-8 text-sm"
+          >
+            {showAll ? 'SHOW LESS' : 'LOAD MORE'}
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function Gallery() {
+  const [selectedImage, setSelectedImage] = useState(null);
+
+  // Load all images automatically from the folder without manually typing 54 imports
+  const categories = useMemo(() => {
+    // import.meta.glob is a Vite feature to dynamically import all matching files
+    const modules = import.meta.glob('../assets/images/*.{png,jpeg,jpg}', { eager: true, query: '?url', import: 'default' });
+    
+    // Helper to safely extract images by their number
+    const getImages = (numbers) => {
+      return numbers.map(n => {
+        const key = Object.keys(modules).find(k => k.match(new RegExp(`pic\\s?${n}\\.(png|jpe?g)$`, 'i')));
+        return key ? modules[key] : null;
+      }).filter(Boolean);
+    };
+
+    const sarees = getImages([1, 2, 3, 5, 6, 7, 9, 11, 12, 13, 14, 15, 17, 19, 24, 25, 26, 27, 28, 29, 30, 32, 41, 42, 43, 44]);
+    const watches = getImages([33, 35, 36, 37, 38, 39, 40, 45]);
+    const antiques = getImages([4, 8, 10]);
+    const coins = getImages([46, 47, 48, 49, 50, 51, 52, 53, 54]);
+
+    return [
+      { id: 'sarees', title: 'Sarees & Old Clothes', images: sarees },
+      { id: 'watches', title: 'Vintage Watches', images: watches },
+      { id: 'antiques', title: 'Antiques', images: antiques },
+      { id: 'coins', title: 'Old Coins & Currency', images: coins },
+    ];
+  }, []);
 
   return (
     <section id="gallery" className="py-16 sm:py-24 lg:py-32 bg-warm-ivory border-t border-muted/10 relative z-10">
@@ -88,130 +128,17 @@ export default function Gallery() {
           </motion.h2>
         </div>
 
-        {/* Responsive Editorial Collage Grid (First 5 Images) */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-4 sm:gap-6 lg:gap-8">
-          
-          {/* Large Wide Image */}
-          <motion.div 
-            className="col-span-1 sm:col-span-2 md:col-span-12 lg:col-span-8 relative group overflow-hidden border border-muted/10 bg-white cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            onClick={() => setSelectedImage(pic14)}
-          >
-            <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-[16/9] overflow-hidden">
-              <img src={pic14} alt="Vintage Collection" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
-              <div className="absolute inset-0 bg-charcoal/0 lg:group-hover:bg-charcoal/20 transition-colors duration-700"></div>
-            </div>
-          </motion.div>
-
-          {/* Tall Image */}
-          <motion.div 
-            className="col-span-1 md:col-span-6 lg:col-span-4 relative group overflow-hidden border border-muted/10 bg-white lg:translate-y-24 cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-            onClick={() => setSelectedImage(pic4)}
-          >
-            <div className="relative w-full aspect-square sm:aspect-[3/4] overflow-hidden">
-              <img src={pic4} alt="Vintage Items" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
-              <div className="absolute inset-0 bg-charcoal/0 lg:group-hover:bg-charcoal/20 transition-colors duration-700"></div>
-            </div>
-          </motion.div>
-
-          {/* Square Image */}
-          <motion.div 
-            className="col-span-1 md:col-span-6 lg:col-span-4 relative group overflow-hidden border border-muted/10 bg-white cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            onClick={() => setSelectedImage(pic2)}
-          >
-            <div className="relative w-full aspect-square overflow-hidden">
-              <img src={pic2} alt="Old Textlies" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
-              <div className="absolute inset-0 bg-charcoal/0 lg:group-hover:bg-charcoal/20 transition-colors duration-700"></div>
-            </div>
-          </motion.div>
-
-          {/* Large Offset Image */}
-          <motion.div 
-            className="col-span-1 sm:col-span-2 md:col-span-12 lg:col-span-6 relative group overflow-hidden border border-muted/10 bg-white lg:mt-32 lg:translate-x-12 cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            onClick={() => setSelectedImage(pic17)}
-          >
-            <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-[4/3] overflow-hidden">
-              <img src={pic17} alt="Antique Objects" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
-              <div className="absolute inset-0 bg-charcoal/0 lg:group-hover:bg-charcoal/20 transition-colors duration-700"></div>
-            </div>
-          </motion.div>
-
-          {/* Small Offset Image */}
-          <motion.div 
-            className="col-span-1 sm:col-span-2 md:col-span-6 lg:col-span-3 lg:col-start-9 relative group overflow-hidden border border-muted/10 bg-white lg:-translate-y-16 cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            onClick={() => setSelectedImage(pic5)}
-          >
-            <div className="relative w-full aspect-[4/3] sm:aspect-video lg:aspect-square overflow-hidden">
-              <img src={pic5} alt="Unique Items" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
-              <div className="absolute inset-0 bg-charcoal/0 lg:group-hover:bg-charcoal/20 transition-colors duration-700"></div>
-            </div>
-          </motion.div>
-
-        </div>
-
-
-
-        {/* Extra Images Grid */}
-        <AnimatePresence>
-          {showAll && (
-            <motion.div 
-              className="mt-16 lg:mt-24 overflow-hidden pt-8 lg:pt-16 border-t border-muted/10"
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: "auto", opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
-                {extraImages.map((img, index) => (
-                  <motion.div 
-                    key={index}
-                    className="relative w-full aspect-square overflow-hidden border border-muted/10 bg-white cursor-pointer group"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.5, delay: (index % 4) * 0.1 }}
-                    onClick={() => setSelectedImage(img)}
-                  >
-                    <img 
-                      src={img} 
-                      alt={`Gallery item ${index + 6}`} 
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                      loading="lazy" 
-                    />
-                    <div className="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/20 transition-colors duration-300"></div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <div className="mt-12 lg:mt-16 flex justify-center w-full clear-both pt-8 lg:pt-12">
-          <button 
-            onClick={handleToggle}
-            className="btn-secondary min-h-[48px] px-10"
-          >
-            {showAll ? 'SHOW LESS IMAGES' : 'LOAD MORE IMAGES'}
-          </button>
+        {/* Render Each Category */}
+        <div className="flex flex-col gap-8">
+          {categories.map((cat) => (
+            <GalleryCategory 
+              key={cat.id}
+              id={cat.id}
+              title={cat.title}
+              images={cat.images}
+              setSelectedImage={setSelectedImage}
+            />
+          ))}
         </div>
 
       </div>

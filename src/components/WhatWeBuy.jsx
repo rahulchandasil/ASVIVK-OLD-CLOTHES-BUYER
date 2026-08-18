@@ -1,22 +1,17 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import pic13 from '../assets/images/pic13.jpeg';
-import pic26 from '../assets/images/pic26.jpeg';
-import pic17 from '../assets/images/pic17.jpeg';
-import pic11 from '../assets/images/pic11.png';
 import pic10 from '../assets/images/pic10.png';
-import pic7 from '../assets/images/pic7.png';
-import pic5 from '../assets/images/pic5.png';
-import pic4 from '../assets/images/pic4.jpeg';
-import pic22 from '../assets/images/pic22.jpeg';
 import pic16 from '../assets/images/pic16.jpeg';
+import pic50 from '../assets/images/pic50.jpeg';
+import pic35 from '../assets/images/pic35.jpeg';
 
 const categories = [
-  { num: "01", title: "OLD CLOTHES", desc: "Vintage garments and textiles.", image: pic13, placeholder: "" },
-  { num: "02", title: "ANTIQUE ITEMS", desc: "Genuine antique objects and historical artifacts.", image: pic10 , placeholder: "ANTIQUE OBJECTS" },
-  { num: "03", title: "VINTAGE PRODUCTS", desc: "Classic electronics, old watches and accessories.", image: pic4, placeholder: "VINTAGE PRODUCTS" },
-  { num: "04", title: "OLD HOUSEHOLD ITEMS", desc: "Well-preserved furniture, clocks and decor.", image: pic16, placeholder: "HOUSEHOLD DECOR" },
-  { num: "05", title: "OTHER VALUABLE OLD ITEMS", desc: "Unique collectibles and rare vintage belongings.", image: pic22 , placeholder: "VALUABLE ITEMS" }
+  { num: "01", title: "OLD CLOTHES & SAREES", desc: "Vintage garments, traditional sarees, and textiles.", image: pic13, placeholder: "VINTAGE CLOTHING" },
+  { num: "02", title: "OLD COINS & CURRENCY", desc: "Rare historical coins, currency, and antique banknotes.", image: pic50 , placeholder: "OLD COINS" },
+  { num: "03", title: "ANTIQUE ITEMS", desc: "Genuine antique objects and historical artifacts.", image: pic10, placeholder: "ANTIQUE OBJECTS" },
+  { num: "04", title: "VINTAGE WATCHES", desc: "Classic luxury watches and old timepieces.", image: pic35, placeholder: "VINTAGE WATCHES" },
+  { num: "05", title: "OTHER VALUABLES", desc: "Well-preserved furniture, decor and household items.", image: pic16, placeholder: "VALUABLES" }
 ];
 
 export default function WhatWeBuy() {

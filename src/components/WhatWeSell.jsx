@@ -6,12 +6,13 @@ import pic3 from '../assets/images/pic3.png';
 import pic6 from '../assets/images/pic6.png';
 import pic10 from '../assets/images/pic10.png';
 import pic14 from '../assets/images/pic14.jpeg';
-import pic18 from '../assets/images/pic18.jpeg';
+import pic35 from '../assets/images/pic35.jpeg';
+import pic52 from '../assets/images/pic52.jpeg';
 import pic19 from '../assets/images/pic19.jpeg';
-import pic20 from '../assets/images/pic20.jpeg';
-import pic21 from '../assets/images/pic21.jpeg';
+import pic36 from '../assets/images/pic36.jpeg';
+import pic47 from '../assets/images/pic47.jpeg';
 import pic28 from '../assets/images/pic28.jpeg';
-import pic29 from '../assets/images/pic29.jpeg';
+import pic8 from '../assets/images/pic8.png';
 import pic30 from '../assets/images/pic30.jpeg';
 import pic32 from '../assets/images/pic32.jpeg';
 
@@ -91,28 +92,28 @@ export default function WhatWeSell() {
             onClick={() => setSelectedImage(pic14)}
           >
             <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-              <img src={pic14} alt="Vintage Clothing" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+              <img src={pic14} alt="Vintage Sarees" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
               <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
               <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 z-20">
-                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-warm-ivory drop-shadow-lg break-words">Vintage Clothing</h3>
+                <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-warm-ivory drop-shadow-lg break-words">Vintage Sarees</h3>
               </div>
             </div>
           </motion.div>
 
-          {/* Secondary Medium Image (Collectible Pieces) */}
+          {/* Secondary Medium Image (Vintage Watches) */}
           <motion.div 
             className="w-full md:w-[40%] lg:w-[35%] h-[40vh] md:h-[40vh] lg:h-[50vh] md:absolute md:right-12 lg:right-32 md:top-0 z-20 cursor-pointer"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            onClick={() => setSelectedImage(pic18)}
+            onClick={() => setSelectedImage(pic35)}
           >
             <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-              <img src={pic18} alt="Collectible Pieces" className="w-full h-full object-cover object-[center_70%] transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+              <img src={pic35} alt="Vintage Watches" className="w-full h-full object-cover object-[center_70%] transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
               <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
               <div className="absolute bottom-6 left-6 md:bottom-8 md:left-8 z-20">
-                <h3 className="font-serif text-2xl md:text-3xl text-warm-ivory drop-shadow-lg break-words">Collectible Pieces</h3>
+                <h3 className="font-serif text-2xl md:text-3xl text-warm-ivory drop-shadow-lg break-words">Vintage Watches</h3>
               </div>
             </div>
           </motion.div>
@@ -124,13 +125,13 @@ export default function WhatWeSell() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-            onClick={() => setSelectedImage(pic10)}
+            onClick={() => setSelectedImage(pic52)}
           >
             <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-              <img src={pic10} alt="Antiques" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+              <img src={pic52} alt="Old Coins & Antiques" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
               <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
               <div className="absolute bottom-6 left-6 z-20">
-                <h3 className="font-serif text-xl sm:text-2xl text-warm-ivory drop-shadow-lg break-words"> Antiques</h3>
+                <h3 className="font-serif text-xl sm:text-2xl text-warm-ivory drop-shadow-lg break-words">Coins & Antiques</h3>
               </div>
             </div>
           </motion.div>
@@ -159,82 +160,82 @@ export default function WhatWeSell() {
               onClick={() => setSelectedImage(pic2)}
             >
               <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-                <img src={pic2} alt="Vintage Selection" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+                <img src={pic2} alt="Old Saree" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 z-20">
-                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Curated Items</h3>
+                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Old Saree</h3>
                 </div>
               </div>
             </motion.div>
 
-            {/* Image 2 - pic6 */}
+            {/* Image 2 - pic36 */}
             <motion.div 
               className="w-full h-[35vh] sm:h-[40vh] cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              onClick={() => setSelectedImage(pic6)}
+              onClick={() => setSelectedImage(pic36)}
             >
               <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-                <img src={pic6} alt="Vintage Finds" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+                <img src={pic36} alt="Vintage Watch" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 z-20">
-                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Premium Finds</h3>
+                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Vintage Watch</h3>
                 </div>
               </div>
             </motion.div>
 
-            {/* Image 3 - pic19 */}
+            {/* Image 3 - pic47 */}
             <motion.div 
               className="w-full h-[35vh] sm:h-[40vh] cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              onClick={() => setSelectedImage(pic19)}
+              onClick={() => setSelectedImage(pic47)}
             >
               <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-                <img src={pic19} alt="Vintage Collection" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+                <img src={pic47} alt="Old Currency" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 z-20">
-                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Rare Pieces</h3>
+                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Old Currency</h3>
                 </div>
               </div>
             </motion.div>
 
-            {/* Image 4 - pic20 */}
+            {/* Image 4 - pic19 */}
             <motion.div 
               className="w-full h-[35vh] sm:h-[40vh] cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-              onClick={() => setSelectedImage(pic20)}
+              onClick={() => setSelectedImage(pic19)}
             >
               <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-                <img src={pic20} alt="Antique Treasures" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+                <img src={pic19} alt="Classic Saree" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 z-20">
-                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Treasures</h3>
+                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Classic Saree</h3>
                 </div>
               </div>
             </motion.div>
 
-            {/* Image 5 - pic21 */}
+            {/* Image 5 - pic8 */}
             <motion.div 
               className="w-full h-[35vh] sm:h-[40vh] cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              onClick={() => setSelectedImage(pic21)}
+              onClick={() => setSelectedImage(pic8)}
             >
               <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-                <img src={pic21} alt="Vintage Display" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+                <img src={pic8} alt="Antique Object" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 z-20">
-                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Unique Pieces</h3>
+                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Antique Object</h3>
                 </div>
               </div>
             </motion.div>
@@ -249,28 +250,28 @@ export default function WhatWeSell() {
               onClick={() => setSelectedImage(pic28)}
             >
               <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-                <img src={pic28} alt="Old Collections" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+                <img src={pic28} alt="Traditional Saree" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 z-20">
-                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Collections</h3>
+                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Traditional Saree</h3>
                 </div>
               </div>
             </motion.div>
 
-            {/* Image 7 - pic29 */}
+            {/* Image 7 - pic10 */}
             <motion.div 
               className="w-full h-[35vh] sm:h-[40vh] cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 1, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              onClick={() => setSelectedImage(pic29)}
+              onClick={() => setSelectedImage(pic10)}
             >
               <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-                <img src={pic29} alt="Vintage Artifacts" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+                <img src={pic10} alt="Antique Decor" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 z-20">
-                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Artifacts</h3>
+                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Antique Decor</h3>
                 </div>
               </div>
             </motion.div>
@@ -285,10 +286,10 @@ export default function WhatWeSell() {
               onClick={() => setSelectedImage(pic30)}
             >
               <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-                <img src={pic30} alt="Rare Collections" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+                <img src={pic30} alt="Rare Saree" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 z-20">
-                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Rare Items</h3>
+                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Rare Saree</h3>
                 </div>
               </div>
             </motion.div>
@@ -303,10 +304,10 @@ export default function WhatWeSell() {
               onClick={() => setSelectedImage(pic32)}
             >
               <div className="w-full h-full relative group overflow-hidden border border-warm-ivory/10 shadow-2xl">
-                <img src={pic32} alt="Premium Collection" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
+                <img src={pic32} alt="Vintage Garment" className="w-full h-full object-cover transition-transform duration-[3000ms] lg:group-hover:scale-105" loading="lazy" />
                 <div className="absolute inset-0 bg-charcoal/30 lg:bg-charcoal/20 group-hover:bg-charcoal/40 transition-colors"></div>
                 <div className="absolute bottom-4 left-4 z-20">
-                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Premium Items</h3>
+                  <h3 className="font-serif text-lg sm:text-xl text-warm-ivory drop-shadow-lg">Vintage Garment</h3>
                 </div>
               </div>
             </motion.div>
