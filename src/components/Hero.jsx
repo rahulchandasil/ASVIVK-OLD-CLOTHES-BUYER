@@ -4,13 +4,15 @@ import { ArrowRight, Phone } from 'lucide-react';
 import pic35 from '../assets/images/pic35.jpeg';
 import pic36 from '../assets/images/pic36.jpeg';
 import pic52 from '../assets/images/pic52.jpeg';
-import pic47 from '../assets/images/pic47.jpeg';
+import pic47 from '../assets/images/pic 47.jpeg';
 import pic10 from '../assets/images/pic10.png';
 import pic14 from '../assets/images/pic14.jpeg';
 import pic2 from '../assets/images/pic2.png';
 import pic19 from '../assets/images/pic19.jpeg';
 import pic6 from '../assets/images/pic6.png';
 import pic32 from '../assets/images/pic32.jpeg';
+import pic1 from '../assets/images/pic1.png';
+import pic37 from '../assets/images/pic 37.jpeg';
 
 const heroImages = [
   { src: pic35, alt: "Vintage Watch Collection", position: "center" },
@@ -19,6 +21,8 @@ const heroImages = [
   { src: pic2, alt: "Old clothes and vintage items", position: "center" },
   { src: pic36, alt: "Classic Timepieces", position: "center" },
   { src: pic10, alt: "Antique Items", position: "center" },
+  { src: pic1, alt: "Traditional Garments", position: "center" },
+  { src: pic37, alt: "Elegant Vintage Watch", position: "center" },
   { src: pic19, alt: "Collectible vintage pieces", position: "center" },
   { src: pic47, alt: "Rare Old Coins", position: "center" },
   { src: pic6, alt: "Vintage clothing", position: "center" },

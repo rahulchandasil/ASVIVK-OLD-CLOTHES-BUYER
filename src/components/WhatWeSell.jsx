@@ -10,7 +10,7 @@ import pic35 from '../assets/images/pic35.jpeg';
 import pic52 from '../assets/images/pic52.jpeg';
 import pic19 from '../assets/images/pic19.jpeg';
 import pic36 from '../assets/images/pic36.jpeg';
-import pic47 from '../assets/images/pic47.jpeg';
+import pic47 from '../assets/images/pic 47.jpeg';
 import pic28 from '../assets/images/pic28.jpeg';
 import pic8 from '../assets/images/pic8.png';
 import pic30 from '../assets/images/pic30.jpeg';
